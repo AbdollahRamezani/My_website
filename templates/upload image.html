@@ -1,0 +1,16 @@
+{% extends 'master.html'%}
+
+{% block title %}
+  upload image
+{% endblock %}
+
+{% block content %}
+
+    <form method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+          <input class="form-control" name="image" type="file" id="formFile"><br>
+          <button type="submit" class="btn btn-danger">Send File</button>
+      </div>
+    </form>  
+
+{% endblock %}

@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMR</title>
+    <title>
+        {% block title %}
+          {% endblock %}
+    </title>
     <link href="static/css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -21,6 +24,9 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/form_bmr">BMR</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,30 +50,8 @@
               </div>
             </div>
           </nav>
-          
-        <h3>Calculate BMR</h3>
-
-        <form method="post">
-          <div class="mb-3">
-            <label class="form-label text-primary">weight(kg)</label>
-            <input type="number" name="weight" class="form-control" >
-          </div>
-          <div class="mb-3">
-            <label  class="form-label text-primary">height(cm)</label>
-            <input type="number" name="height" class="form-control">
-          </div>
-          <div class="mb-3">
-            <label  class="form-label text-primary">age(years)</label>
-            <input type="number" name="age" class="form-control">
-          </div>
-          
-          <label  class="form-label text-primary">Gender</label>
-          <select name="gender" class="form-select" aria-label="Default select example">
-            <option value="1" selected>Male</option>
-            <option value="2">Female</option>
-          </select> <br>
-          <button type="submit" class="btn btn-success">Calculate</button>
-        </form>
+          {% block content %}
+          {% endblock %}
     </div>
     
     <script src="static/js.bootstrap.js"></script>

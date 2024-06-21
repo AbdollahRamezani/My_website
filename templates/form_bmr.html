@@ -1,0 +1,31 @@
+{% extends 'master.html' %}
+
+{% block title %}
+  form_BMR
+{% endblock %}
+
+{% block content %}
+<h3>Calculate BMR</h3>
+
+    <form method="post">
+      <div class="mb-3">
+        <label class="form-label text-primary">weight(kg)</label>
+        <input type="number" name="weight" class="form-control" >
+      </div>
+      <div class="mb-3">
+        <label  class="form-label text-primary">height(cm)</label>
+        <input type="number" name="height" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label  class="form-label text-primary">age(years)</label>
+        <input type="number" name="age" class="form-control">
+      </div>
+      
+      <label  class="form-label text-primary">Gender</label>
+      <select name="gender" class="form-select" aria-label="Default select example">
+        <option value="1" selected>Male</option>
+        <option value="2">Female</option>
+      </select> <br>
+      <button type="submit" class="btn btn-success">Calculate</button>
+    </form>
+{% endblock %}
